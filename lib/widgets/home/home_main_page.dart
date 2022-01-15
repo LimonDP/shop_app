@@ -1,5 +1,6 @@
 import 'package:flutter/material.dart';
 import 'package:provider/provider.dart';
+import 'package:shop_app/models/gadgets/gadgets_list.dart';
 import 'package:shop_app/models/product_list.dart';
 import 'package:shop_app/widgets/home/home_drawer.dart';
 
@@ -18,8 +19,7 @@ class _HomePageState extends State<HomePage> {
   TextEditingController _editingController = TextEditingController();
   @override
   Widget build(BuildContext context) {
-    final _provider =
-        Provider.of<ProductProvider>(context, listen: false).provider;
+    final _provider = Provider.of<ProductProvider>(context, listen: false);
     return Scaffold(
       drawer: HomeDrawer(),
       body: CustomScrollView(
@@ -122,10 +122,15 @@ class _HomePageState extends State<HomePage> {
               ),
             ),
           ),
-          HomeSliverAdapter(),
+          HomeSliverAdapter(
+            productLength: _provider.products.length,
+          ),
           SliverProduct(
             productList: Provider.of<ProductProvider>(context).products,
           )
+          // SliverProduct(
+          //   productList: Provider.of<GadgetsProvider>(context).products,
+          // )
         ],
       ),
       endDrawer: Drawer(

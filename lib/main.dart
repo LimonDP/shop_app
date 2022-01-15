@@ -62,8 +62,8 @@ class MyApp extends StatelessWidget {
       debugShowCheckedModeBanner: false,
       initialRoute: '/',
       routes: {
-        '/home': (context) => AtuhSignUp(),
-        '/': (context) => const HomePage(),
+        '/': (context) => AtuhSignUp(),
+        '/home': (context) => const HomePage(),
         '/product-details': (context) => const ProductDetailsPage(),
         '/product-details-book': (context) => const BookDetailsPage(),
         '/product-details-cosmetic': (context) => const CosmeticDetailsPage(),

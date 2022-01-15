@@ -28,6 +28,7 @@ class _AtuhSignUpState extends State<AtuhSignUp> {
         _authData['email'].toString(),
         _authData['password'].toString(),
       );
+      Navigator.of(context).pushNamed('/sign-in');
     } else {
       print('password not match');
     }
